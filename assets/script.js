@@ -32,9 +32,19 @@ function generatePassword() {
     if(symbols) {
       newPassword += symbolsEl
     };
-    console.log("prompt works?");
+    // console.log("prompt works?");
+    if(lowercase === false && upperCase === false && symbols === false && numbers == false) {
+      alert("Please select at least one character type");
+      generatePassword();
+    }
   }
-
+  let pwd = "";
+  for (let i = 0; i < passwordLength; i++) {
+    pwd += newPassword.charAt(Math.floor(Math.random() * newPassword.length))
+  }
+  return pwd
+  
+}
 
 function writePassword() {
 
